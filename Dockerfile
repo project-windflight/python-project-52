@@ -17,3 +17,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app/
 
 EXPOSE 8000
+
+# Command to run when container starts
+CMD ["sh", "-c", "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn -w 5 -b 0.0.0.0:${PORT:-8000} task_manager.wsgi"]
+
