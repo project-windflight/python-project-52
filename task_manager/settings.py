@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '0.0.0.0',
     '.railway.app',
+    '.render.com',
     'localhost',
 ]
 
@@ -174,6 +175,7 @@ ROLLBAR = {
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.railway.app',
+    'https://*.render.com',
     'https://127.0.0.1',
     'https://localhost',
     'https://0.0.0.0',
